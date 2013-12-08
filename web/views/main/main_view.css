@@ -1,0 +1,25 @@
+.box-container {
+  border: 1px solid #ccc;
+  background-color: white;
+  padding: 10px;
+  margin: 10px 10px 10px 0;
+  width: 520px;
+  height: 600px;
+}
+
+.btn, input, label {
+  cursor: default !important;
+}
+
+/* this helps checkbox labels line up vertically with the checkbox */
+input[type=checkbox] {
+  float: left;
+  margin-right: 0.4em;
+}
+
+textarea {
+  width: 99%;
+  height: 88%;
+  margin-top: 10px;
+  resize: none;
+}
