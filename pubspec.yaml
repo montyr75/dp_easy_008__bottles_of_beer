@@ -1,7 +1,7 @@
-name: Polymer App
-description: A Polymer Dart application.
+name: The_Beer_Song
+description: 99 Bottles of Bear on the Wall
 dependencies:
-    polymer: any
+    polymer: ">=0.11.0-dev.4"
 transformers:
 - polymer:
     entry_points: web/index.html

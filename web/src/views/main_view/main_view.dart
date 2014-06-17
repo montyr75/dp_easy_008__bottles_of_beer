@@ -19,38 +19,38 @@ class MainView extends PolymerElement {
   // UI data
   @observable bool spellOutNumbers = false;
   @observable String song = "";
-  
+
   // non-visual initialization can be done here
   MainView.created() : super.created();
 
   // other initialization can be done here
-  @override void enteredView() {
-    super.enteredView();
-    print("MainView::enteredView()");
+  @override void attached() {
+    super.attached();
+    print("MainView::attached()");
   }
 
   void sing(Event event, var detail, Element target) {
     print("MainView::sing()");
-    
+
     Pluralizer bottle = new Pluralizer("bottle", "bottles");
     StringBuffer sb = new StringBuffer();       // efficient String construction object
     int i = 99;                                 // iterator starts at 99 bottles
     String number;                              // String version of numeral or word form of numeral
-    
+
     while (i > 0) {
       number = spellOutNumbers ? intToWord(i) : i.toString();
-      
+
       sb.writeln("${capitalize(number)} ${bottle.getTerm(i)} of beer on the wall, $number ${bottle.getTerm(i)} of beer");
-      
+
       i--;
-      
+
       number = spellOutNumbers ? intToWord(i) : i.toString();
-      
+
       sb.writeln("Take one down, pass it around, $number ${bottle.getTerm(i)} of beer on the wall");
-      
+
       sb.writeln();
     }
-    
+
     song = sb.toString();
   }
 
