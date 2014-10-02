@@ -7,30 +7,32 @@
 // Ninety-nine bottles of beer on the wall, Ninety-nine bottles of beer.
 // Take one down, pass it around, Ninety-eight bottles of beer on the wall.
 
-library main_view;
+library app_view;
 
 import 'dart:html';
 import 'package:polymer/polymer.dart';
 import '../../utils/string_utils.dart';
 
-@CustomTag('main-view')
-class MainView extends PolymerElement {
+@CustomTag('app-view')
+class AppView extends PolymerElement {
+
+  static const CLASS_NAME = "AppView";
 
   // UI data
   @observable bool spellOutNumbers = false;
   @observable String song = "";
 
   // non-visual initialization can be done here
-  MainView.created() : super.created();
+  AppView.created() : super.created();
 
   // other initialization can be done here
   @override void attached() {
     super.attached();
-    print("MainView::attached()");
+    print("$CLASS_NAME::attached()");
   }
 
   void sing(Event event, var detail, Element target) {
-    print("MainView::sing()");
+    print("$CLASS_NAME::sing()");
 
     Pluralizer bottle = new Pluralizer("bottle", "bottles");
     StringBuffer sb = new StringBuffer();       // efficient String construction object
@@ -52,11 +54,6 @@ class MainView extends PolymerElement {
     }
 
     song = sb.toString();
-  }
-
-  // prevent app reload on <form> submission
-  void submit(Event event, var detail, Element target) {
-    event.preventDefault();
   }
 }
 
