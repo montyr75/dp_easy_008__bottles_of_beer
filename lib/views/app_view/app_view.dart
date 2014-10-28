@@ -11,12 +11,14 @@ library app_view;
 
 import 'dart:html';
 import 'package:polymer/polymer.dart';
+import '../../model/global.dart';
 import '../../utils/string_utils.dart';
 
 @CustomTag('app-view')
 class AppView extends PolymerElement {
 
-  static const CLASS_NAME = "AppView";
+  // initialize system log
+  bool _logInitialized = initLog();
 
   // UI data
   @observable bool spellOutNumbers = false;
@@ -28,11 +30,11 @@ class AppView extends PolymerElement {
   // other initialization can be done here
   @override void attached() {
     super.attached();
-    print("$CLASS_NAME::attached()");
+    log.info("$runtimeType::attached()");
   }
 
   void sing(Event event, var detail, Element target) {
-    print("$CLASS_NAME::sing()");
+    log.info("$runtimeType::sing()");
 
     Pluralizer bottle = new Pluralizer("bottle", "bottles");
     StringBuffer sb = new StringBuffer();       // efficient String construction object

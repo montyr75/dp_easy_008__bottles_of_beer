@@ -2,6 +2,7 @@ name: the_beer_song
 description: 99 Bottles of Bear on the Wall
 dependencies:
   core_elements: any
+  intl: any
   paper_elements: any
   polymer: any
 transformers:
