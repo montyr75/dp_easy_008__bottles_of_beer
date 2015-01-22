@@ -64,7 +64,7 @@ String capitalize(String data) {
   String cap = data[0].toUpperCase();
   
   if (data.length > 1) {
-    return "$cap${data.substring(1, data.length)}";
+    return "$cap${data.substring(1)}";
   }
   
   return cap;
