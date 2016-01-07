@@ -14,8 +14,7 @@ import 'package:polymer_elements/paper_toolbar.dart';
 import 'package:polymer/polymer.dart';
 import 'package:web_components/web_components.dart' show HtmlImport;
 
-import 'package:the_beer_song/services/logger.dart';
-
+import '../../services/logger.dart';
 import '../../utils/string_utils.dart';
 
 @PolymerRegister('main-app')
