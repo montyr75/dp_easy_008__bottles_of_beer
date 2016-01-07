@@ -1,4 +1,4 @@
-library string_utils;
+library lib.utils.string_utils;
 
 // numbers under 20 expressed in word form
 final List<String> ones = [
@@ -59,16 +59,8 @@ String intToWord(int number) {
   return sb.toString();
 }
 
-// capitalizes first letter of 'data'
-String capitalize(String data) {
-  String cap = data[0].toUpperCase();
-  
-  if (data.length > 1) {
-    return "$cap${data.substring(1, data.length)}";
-  }
-  
-  return cap;
-}
+// capitalizes first letter of 's'
+String capitalize(String s) => "${s[0].toUpperCase()}${s.substring(1)}";
 
 // provides the correct term for pluralization
 class Pluralizer {

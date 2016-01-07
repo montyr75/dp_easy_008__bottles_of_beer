@@ -1,0 +1,51 @@
+<dom-module id="main-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      paper-button {
+        cursor: default;
+        text-transform: none;
+      }
+
+      paper-checkbox {
+        cursor: default;
+      }
+
+      .card {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 5px;
+        min-width: 560px;
+      }
+
+      .content {
+        padding: 10px;
+      }
+    </style>
+
+    <paper-header-panel class="flex">
+      <paper-toolbar class="layout horizontal center center-justified">
+        <h2>The Beer Song</h2>
+      </paper-toolbar>
+
+      <div class="layout vertical center content">
+        <paper-material elevation="1" class="card layout horizontal center justified">
+          <paper-button on-tap="sing" >
+            <iron-icon src="[[noteIconURL]]"></iron-icon>
+            Sing
+          </paper-button>
+          <paper-checkbox checked="{{spellOutNumbers}}">Spell out numbers</paper-checkbox>
+        </paper-material>
+
+        <paper-material elevation="1" class="card" hidden$="[[hideSong]]">
+          <pre>
+{{song}}
+          </pre>
+        </paper-material>
+      </div>
+    </paper-header-panel>
+  </template>
+</dom-module>

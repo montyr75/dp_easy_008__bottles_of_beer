@@ -1,23 +1,20 @@
 <!DOCTYPE html>
-
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
-
     <title>The Beer Song</title>
 
-    <!-- import Polymer theme CSS (from polymerthemes.com) -->
-    <link rel="stylesheet" href="resources/css/denim.css"/>
+    <script>
+      window.Polymer = window.Polymer || {};
+      window.Polymer.dom = 'shadow';
+    </script>
 
-    <!-- import custom element HTML -->
-    <link rel="import" href="packages/the_beer_song/views/app_view/app_view.html">
-
-    <!-- initialize Polymer -->
-    <script type="application/dart">export 'package:polymer/init.dart';</script>
+    <link rel="import" href="resources/css/denim.html">
   </head>
 
-  <body fullbleed unresolved touch="auto">
-    <app-view layout vertical></app-view>
+  <body unresolved class="fullbleed">
+    <main-app class="fit layout vertical">Loading...</main-app>
+
+    <script src="index.dart" type="application/dart"></script>
+    <script src="packages/browser/dart.js"></script>
   </body>
 </html>

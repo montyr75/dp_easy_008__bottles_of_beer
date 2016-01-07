@@ -1,10 +1,25 @@
 name: the_beer_song
-description: 99 Bottles of Bear on the Wall
+version: 0.0.1
+description: 99 Bottles of Beer on the Wall using Polymer Dart
+
+environment:
+  sdk: '>=1.9.0 <2.0.0'
+
 dependencies:
-  core_elements: any
+  browser: ^0.10.0
+  polymer: ^1.0.0-rc.11
+  web_components: ^0.12.0
+  polymer_elements: ^1.0.0-rc.5
+  logging: any
   intl: any
-  paper_elements: any
-  polymer: any
+
 transformers:
 - polymer:
-    entry_points: web/index.html
+    entry_points:
+      - web/index.html
+- $dart2js:
+    $include: '**/*.bootstrap.initialize.dart'
+    minify: true
+    commandLineOptions:
+    - --trust-type-annotations
+    - --trust-primitives
